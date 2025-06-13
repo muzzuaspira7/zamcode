@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Cinzel';
+  src: url('./assets/fonts/Cinzel-Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Light.ttf') format('truetype');
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  height: 100%;       /* ensure full height */
+}
+
+/* Smooth animations & rendering tweaks */
+* {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+}
