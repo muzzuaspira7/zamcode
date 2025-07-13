@@ -9,30 +9,31 @@ function App() {
   const [animating, setAnimating] = useState(false)
 
   return (
-    <Router>
+    <div className='relative min-h-screen w-screen'>
+      <Router>
       <Social />
       <Nav setAnimating={setAnimating} animating={animating} />
       <PageTransition animating={animating}>
         <AnimatedRoutes animating={animating} />
       </PageTransition>
     </Router>
+    </div>
   )
 }
 
 function AnimatedRoutes({ animating }) {
   const location = useLocation()
 
-  // If animating, render nothing to prevent flicker
-  if (animating) return null
-
   return (
-    <Routes location={location} key={location.pathname}>
-      <Route path="/" element={<Home />} />
-      <Route path="/About" element={<About />} />
-      <Route path="/Skills" element={<Skills />} />
-      <Route path="/Projects" element={<Projects />} />
-      <Route path="/Contact" element={<Contact />} />
-    </Routes>
+    <div className='bg-[#fffaf6] h-auto'>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={animating ? null : <Home />} />
+        <Route path="/About" element={animating ? null : <About />} />
+        <Route path="/Skills" element={animating ? null : <Skills />} />
+        <Route path="/Projects" element={animating ? null : <Projects />} />
+        <Route path="/Contact" element={animating ? null : <Contact />} />
+      </Routes>
+    </div>
   )
 }
 

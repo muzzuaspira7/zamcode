@@ -4,7 +4,6 @@ import Colors from '../constant/AppColors'
 function Nav({ setAnimating, animating }) {
   const location = useLocation()
   const navigate = useNavigate()
-
   const navItems = [
     { to: '/', icon: 'home' },
     { to: '/About', icon: 'person' },
@@ -27,9 +26,10 @@ function Nav({ setAnimating, animating }) {
   return (
     <div
       style={{ color: Colors.backgroundColor }}
-      className="fixed z-50 flex md:flex-col flex-row gap-2 bg-black p-2 md:p-6 text-xl rounded-md md:top-1/2 md:right-10 md:-translate-y-1/2 bottom-5 md:bottom-auto md:left-auto left-1/2 -translate-x-1/2 md:translate-x-0"
+      className="w-full h-10 fixed top-[90%] md:top-[50%] md:left-[40%] z-50 flex justify-center items-center"
     >
-      {navItems.map((item, index) => {
+      <div className='bg-black w-[85vw] md:w-auto flex md:flex-col p-3 rounded-md'>
+        {navItems.map((item, index) => {
         const isActive = location.pathname === item.to
         return (
           <div
@@ -38,15 +38,22 @@ function Nav({ setAnimating, animating }) {
             style={{
               width: '100%',
               color: isActive ? Colors.backgroundColor : Colors.greyColor,
-              backgroundColor: isActive ? Colors.primaryColor : Colors.lightBlack,
               cursor: 'pointer',
             }}
-            className="p-4 flex justify-center items-center rounded-sm hover:scale-105 transition-transform duration-200 select-none"
+            className="relative md:text-3xl text-2xl md:p-4 p-2 flex justify-center items-center rounded-md hover:scale-105 transition-transform duration-200 select-none hover:bg-slate-900 pb-3"
           >
             <ion-icon name={item.icon}></ion-icon>
+            {
+              isActive ? (
+                <div className=' h-1.5 w-1.5 bg-white rounded absolute bottom-1 '>
+
+            </div>
+              ) : ""
+            }
           </div>
         )
       })}
+      </div>
     </div>
   )
 }

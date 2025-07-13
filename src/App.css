@@ -16,6 +16,9 @@ html, body, #root {
   overflow-x: hidden; /* prevent horizontal scroll */
   height: 100%;       /* ensure full height */
 }
+body{
+  background: #fffaf6;
+}
 
 /* Smooth animations & rendering tweaks */
 * {

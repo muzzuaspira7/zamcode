@@ -1,30 +1,56 @@
-import '../App.css'
-import CustomButton from '../component/CustomButton'
-import Colors from '../constant/AppColors'
-
+import "../App.css";
+import CustomButton from "../component/CustomButton";
+import Colors from "../constant/AppColors";
+// bg-[#fffaf6]
 function Home() {
   return (
-    <div className='h-[100vh] w-full flex justify-center items-center overflow-hidden'>
-      <div className='flex flex-col justify-center h-screen md:px-10 px-3'>
-        <p style={{ color: Colors.darkColor, fontFamily: 'Montserrat' }} className='font-medium text-3xl md:text-3xl'>
+    <div className="w-full h-10vh flex flex-col md:flex-row items-center justify-between px-4 md:px-16 py-10  md:py-0 bg-[#fffaf6] relative -top-10 md:top-0">
+      {/* LEFT TEXT SECTION */}
+      <div className="w-full md:w-1/2 md:pt-34 z-10 md:text-left">
+        <p
+          style={{ color: Colors.darkColor, fontFamily: "Montserrat" }}
+          className="font-semibold text-2xl md:text-3xl mb-3"
+        >
           Hello, I am
         </p>
-        <h3 style={{ color: Colors.darkColor, fontFamily: 'cinzel' }} className='font-light md:text-[3.2rem] text-[2.2rem]'>
+
+        <h1
+          style={{ color: Colors.darkColor, fontFamily: "Cinzel" }}
+          className="text-4xl md:text-6xl font-light mb-2 w-[140%]"
+        >
           MOHAMMED MUZAMMIL
-        </h3>
-        <p style={{ color: Colors.primaryColor, fontFamily: 'Montserrat' }} className='font-bold md:text-[1.5rem] text-[0.7rem] tracking-[0.5em] md:tracking-[0.45em]'>
+        </h1>
+
+        <p
+          style={{ color: Colors.primaryColor, fontFamily: "Montserrat" }}
+          className="font-bold tracking-[0.4em] text-xs md:text-lg mb-6"
+        >
           CROSS PLATFORM DEVELOPER
         </p>
-        <p style={{ color: Colors.darkColor, fontFamily: 'Montserrat' }} className='font-medium md:text-xl text-[1.1rem] md:w-[52vw] w-[100%] mt-2'>
-          I’m a passionate Flutter developer who specializes in building seamless cross-platform apps. Always eager to tackle new challenges, my goal is to create smooth, high-performance experiences that work flawlessly across devices.
+
+        <p
+          style={{ color: Colors.darkColor, fontFamily: "Montserrat" }}
+          className="text-sm md:text-xl font-medium leading-relaxed mb-6 md:max-w-[90%]"
+        >
+          I’m a passionate Flutter developer who specializes in building
+          seamless cross-platform apps. Always eager to tackle new challenges,
+          my goal is to create smooth, high-performance experiences that work
+          flawlessly across devices.
         </p>
+
         <CustomButton isDownload={true} text={"Download CV"} />
       </div>
-      <div className="w-1/2 justify-center items-center pr-20 hidden md:flex">
-        <img className='object-contain h-100' src="src/assets/image/Muzammil.png" alt="Muzammil Image" />
+
+      {/* RIGHT IMAGE SECTION */}
+      <div className="absolute top-20 md:relative w-full md:w-1/2 flex justify-center md:mt-0 -z-10 opacity-50 md:opacity-100">
+        <img
+          src="src/assets/image/Muzammil.png"
+          alt="Muzammil"
+          className="w-[100%] md:w-[40%] max-w-[400px] object-cover opacity-80 md:opacity-100"
+        />
       </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

@@ -1,7 +1,7 @@
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <div className="bg-[#fffaf6]">Contact</div>
   )
 }
 

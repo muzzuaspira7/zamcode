@@ -2,8 +2,7 @@ import CustomButton from "../component/CustomButton"
 import Header from "../component/Header"
 function About() {
   return (
-    // <div className="md:px-7 px-4 pt-20 ">
-    <div className="h-[100vh] w-full flex overflow-hidden md:px-10 px-3 md:py-30 py-20">
+    <div className="h-auto w-full flex overflow-hidden md:px-10 px-3 md:py-30 py-20 bg-[#fffaf6]">
       {/* content */}
       <div>
         <Header />
